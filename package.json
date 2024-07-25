@@ -1,6 +1,6 @@
 {
   "name": "policygen",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "description": "PolicyGen is a js lib for generating TOS, Privacy and other policies ",
   "main": "lib/index.js",
   "exports": {
