@@ -8,17 +8,23 @@
       "import": "./lib/index.js",
       "require": "./lib/index.js"
     },
-    "./config_fields": {
-      "import": "./lib/config_fields.js",
-      "require": "./lib/config_fields.js"
+    "./config-fields": {
+      "import": "./lib/config-fields.js",
+      "require": "./lib/config-fields.js"
     },
     "./configuration": {
       "import": "./lib/configuration.js",
       "require": "./lib/configuration.js"
+    },
+    "./client": {
+      "import": "./lib/client.js",
+      "require": "./lib/client.js"
     }
   },
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rf lib/*",
+    "prepublish": "npm run clean && npm run build",
     "precompile": "node ./scripts/precompile.js",
     "test": "mocha test/**/*.spec.ts"
   },
@@ -27,6 +33,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.16",
     "@types/ejs": "^3.1.5",
+    "@types/lodash": "^4.17.7",
     "@types/mocha": "^10.0.6",
     "@types/sinon": "^17.0.3",
     "chai": "^5.1.1",
@@ -38,6 +45,7 @@
   },
   "dependencies": {
     "ejs": "^3.1.10",
-    "i18next": "^23.11.5"
+    "i18next": "^23.11.5",
+    "lodash": "^4.17.21"
   }
 }
