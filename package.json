@@ -1,0 +1,43 @@
+{
+  "name": "policygen",
+  "version": "0.1.0",
+  "description": "PolicyGen is a js lib for generating TOS, Privacy and other policies ",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.js"
+    },
+    "./config_fields": {
+      "import": "./lib/config_fields.js",
+      "require": "./lib/config_fields.js"
+    },
+    "./configuration": {
+      "import": "./lib/configuration.js",
+      "require": "./lib/configuration.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "precompile": "node ./scripts/precompile.js",
+    "test": "mocha test/**/*.spec.ts"
+  },
+  "author": "Tim Marks @imothee",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chai": "^4.3.16",
+    "@types/ejs": "^3.1.5",
+    "@types/mocha": "^10.0.6",
+    "@types/sinon": "^17.0.3",
+    "chai": "^5.1.1",
+    "mocha": "^10.4.0",
+    "request": "^2.88.2",
+    "sinon": "^18.0.0",
+    "tsx": "^4.15.5",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "i18next": "^23.11.5"
+  }
+}
