@@ -3,6 +3,12 @@
 Policygen helps you setup and publish Privacy Policies and Terms of Service policies to your site with ease.
 Simply set your config in the initializer and we'll do the hard work for you.
 
+## Links
+
+(Homepage)[https://policygen.xyz]
+(Docs)[https://policygen.xyz/docs/policygen-js]
+(Configuration)[https://policygen.xyz/docs/configuration]
+
 ## Installation
 
 ```bash
@@ -29,15 +35,41 @@ function getPolicygenViewPath() {
 
 ## Usage
 
+Because of issues making raw file templates available to both the browser and node libraries, the templates which are loaded in as js files with the string contents to avoid having to do filesystem lookups for the templates.
+
+We are using ejs to render on the server as it is stable and well documented but the ejs browser library caused nothing but pain so for the client/browser library we're using lodash templates instead.
+
+### Creating your config
+
+```
+const config = {
+  ...
+}
+```
+
+### Client Library (browser)
+
+```javascript
+import Policygen from "policygen/client";
+```
+
+### Node Library
+
+```javascript
+import Policygen from "policygen";
+```
+
+### Rendering
+
 ```javascript
 async function generatePrivacyPolicy() {
   const policygen = new Policygen({ config });
-  return await policygen.privacyPolicy();
+  policy = await policygen.privacyPolicy();
 }
 
 async function generateTermsOfService() {
   const policygen = new Policygen({ config });
-  return await policygen.termsOfService();
+  policy = await policygen.termsOfService();
 }
 ```
 
